@@ -1,6 +1,5 @@
 package ru.job4j.cinema.repository;
 
-import net.jcip.annotations.ThreadSafe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -9,11 +8,11 @@ import ru.job4j.cinema.model.User;
 
 import java.util.Optional;
 
-@ThreadSafe
 @Repository
 public class Sql2oUserRepository implements UserRepository {
 
     private final Sql2o sql2o;
+
     private static final Logger LOG = LoggerFactory.getLogger(Sql2oUserRepository.class.getName());
 
     public Sql2oUserRepository(Sql2o sql2o) {
@@ -24,11 +23,11 @@ public class Sql2oUserRepository implements UserRepository {
     public Optional<User> save(User user) {
         try (var connection = sql2o.open()) {
             var sql = """
-                    INSERT INTO users(email, full_name, password) VALUES (:email, :full_name, :password)
+                    INSERT INTO users(full_name, email, password) VALUES (:full_name, :email, :password)
                     """;
             var query = connection.createQuery(sql, true)
+                    .addParameter("full_name", user.getFullName())
                     .addParameter("email", user.getEmail())
-                    .addParameter("full_name", user.getName())
                     .addParameter("password", user.getPassword());
             int generatedId = query.executeUpdate().getKey(Integer.class);
             user.setId(generatedId);

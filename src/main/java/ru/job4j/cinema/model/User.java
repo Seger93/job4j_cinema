@@ -5,27 +5,23 @@ import java.util.Objects;
 
 public class User {
 
+    public static final Map<String, String> COLUMN_MAPPING = Map.of(
+            "full_name", "fullName",
+            "email", "email",
+            "password", "password"
+    );
+
     private  int id;
-
-    private  String email;
-
     private  String fullName;
-
+    private  String email;
     private  String password;
 
-    public User(int id, String email, String fullName, String password) {
+    public User(int id, String fullName, String email, String password) {
         this.id = id;
         this.email = email;
         this.fullName = fullName;
         this.password = password;
     }
-
-    public static final Map<String, String> COLUMN_MAPPING = Map.of(
-            "id", "id",
-            "full_name", "fullName",
-            "email", "email",
-            "password", "password"
-    );
 
     public User() {
     }
@@ -38,7 +34,7 @@ public class User {
         return email;
     }
 
-    public String getName() {
+    public String getFullName() {
         return fullName;
     }
 
