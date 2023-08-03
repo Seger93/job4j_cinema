@@ -1,0 +1,2 @@
+insert into halls(name, row_count, place_count, description) values('Зал 1',10, 10, 'Зал средних размеров');
+insert into halls(name, row_count, place_count, description) values('Зал 2',20, 20, 'Большой зал');
