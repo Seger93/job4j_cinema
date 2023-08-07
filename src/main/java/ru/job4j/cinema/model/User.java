@@ -50,8 +50,8 @@ public class User {
         this.email = email;
     }
 
-    public void setName(String name) {
-        this.fullName = name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public void setPassword(String password) {

@@ -12,9 +12,9 @@ public class Halls {
 
     public static final Map<String, String> COLUMN_MAPPING = Map.of(
             "id", "id",
-            "film_id", "filmId",
-            "rowCount", "rowCount",
-            "placeCount", "placeCount",
+            "name", "name",
+            "row_count", "rowCount",
+            "place_count", "placeCount",
             "description", "description"
     );
 

@@ -19,7 +19,8 @@ public class Sql2oGenreRepository implements GenreRepository {
     public Optional<String> getId(int id) {
         try (var connection = sql2o.open()) {
             var query = connection.createQuery("SELECT * FROM genres WHERE id = :id");
-            var genre = query.addParameter("id", id).executeAndFetchFirst(Genre.class);
+            query.addParameter("id", id);
+            Genre genre = query.setColumnMappings(Genre.COLUMN_MAPPING).executeAndFetchFirst(Genre.class);
             return Optional.ofNullable(genre.getName());
         }
     }

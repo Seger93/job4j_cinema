@@ -1,5 +1,6 @@
 package ru.job4j.cinema.model;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Map;
 import java.util.Objects;
@@ -11,9 +12,9 @@ public class FilmSessions {
 
     private  int hallsId;
 
-    private LocalTime startTime;
+    private LocalDateTime startTime;
 
-    private LocalTime endTime;
+    private LocalDateTime  endTime;
 
     private int price;
 
@@ -26,7 +27,7 @@ public class FilmSessions {
             "price", "price"
     );
 
-    public FilmSessions(int id, int filmId, int hallsId, LocalTime startTime, LocalTime endTime, int price) {
+    public FilmSessions(int id, int filmId, int hallsId, LocalDateTime startTime, LocalDateTime endTime, int price) {
         this.id = id;
         this.filmId = filmId;
         this.hallsId = hallsId;
@@ -62,19 +63,19 @@ public class FilmSessions {
         this.hallsId = hallsId;
     }
 
-    public LocalTime getStartTime() {
+    public LocalDateTime getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(LocalTime startTime) {
+    public void setStartTime(LocalDateTime startTime) {
         this.startTime = startTime;
     }
 
-    public LocalTime getEndTime() {
+    public LocalDateTime getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(LocalTime endTime) {
+    public void setEndTime(LocalDateTime endTime) {
         this.endTime = endTime;
     }
 
