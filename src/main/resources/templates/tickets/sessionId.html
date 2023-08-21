@@ -43,13 +43,13 @@
                 </div>
                 <div class="col-3">
                     <div>
-                        <label class="text-light" for="rowNumber"><b>Select row number</b></label>
+                        <label class="text-light" for="rowNumber"><b>Выберите ряд</b></label>
                         <select class="form-control" id="rowNumber" name="rowNumber">
                             <option th:each="rowNumber : ${rowCount}" th:value="${rowNumber}" th:text="${rowNumber}"></option>
                         </select>
                     </div>
                     <div>
-                        <label class="text-light" for="placeNumber"><b>Select place number</b></label>
+                        <label class="text-light" for="placeNumber"><b>Выберете место</b></label>
                         <select class="form-control" id="placeNumber" name="placeNumber">
                             <option th:each="placeNumber : ${placeCount}" th:value="${placeNumber}" th:text="${placeNumber}"></option>
                         </select>

@@ -54,12 +54,12 @@
                     <td>
                         <h5 th:text="${one_session.film.name}"></h5>
                         <p></p>
-                        <p>Location: <span th:text="${one_session.hall.name}"></span></p>
-                        <p>End time: <span th:text="${#temporals.format(one_session.endTime, 'HH:mm')}"></span></p>
+                        <p>Зал: <span th:text="${one_session.hall.name}"></span></p>
+                        <p>Время: <span th:text="${#temporals.format(one_session.endTime, 'HH:mm')}"></span></p>
                     </td>
                     <td>
                         <p><span th:text="${one_session.price}"></span> EUR</p>
-                        <div class="col-6"><a class="btn btn-info w-100"
+                        <div class="col-6"><a class="btn btn-danger w-100"
                                               th:href="@{/tickets/{ticketOne}(ticketOne=${one_session.id})}">Покупка</a>
                         </div>
                     </td>
