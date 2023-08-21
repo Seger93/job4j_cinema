@@ -5,7 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.job4j.cinema.dto.DtoFilmSession;
 import ru.job4j.cinema.model.Tickets;
-import ru.job4j.cinema.repository.TicketRepository;
 import ru.job4j.cinema.service.FilmSessionService;
 import ru.job4j.cinema.service.TicketService;
 

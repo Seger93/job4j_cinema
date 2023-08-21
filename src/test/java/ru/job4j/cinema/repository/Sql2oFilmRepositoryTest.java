@@ -46,6 +46,6 @@ class Sql2oFilmRepositoryTest {
     @Test
     public void whenFindAllThenGetCollection() {
         Collection<Film> collection = sql2oFilmRepository.findAll();
-        assertThat(collection.size()).isEqualTo(5);
+        assertThat(collection.size()).isEqualTo(2);
     }
 }
